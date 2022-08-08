@@ -1,0 +1,159 @@
+<div class="card">
+  <div class="card-header"></div>
+  <div class="card-body">
+    <form
+      (ngSubmit)="onSubmit()"
+      #form="ngForm"
+      class="form-group"
+      [formGroup]="outputProductForm"
+    >
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <div>
+              <label class="col form-control-sm mb-9" for="nome">
+                Nome do Produto
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="nome"
+                  nome="nome"
+                  placeholder="Informe o nome do produto"
+                  formControlName="nome"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div>
+              <label class="col form-control-sm mb-9" for="lote"> Lote </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="lote"
+                  nome="lote"
+                  placeholder="Informe o lote do produto"
+                  formControlName="lote"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="col form-control-sm mb-9" for="quantidade">
+                Quantidade
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="quantidade"
+                  name="quantidade"
+                  placeholder="Informe a quantidade vendida"
+                  formControlName="quantidade"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div>
+              <label class="col form-control-sm mb-9" for="nomeCliente">
+                Nome do Cliente
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="nomeCliente"
+                  nome="nomeCliente"
+                  placeholder="Informe o nome do cliente"
+                  formControlName="nomeCliente"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-9">
+          <div class="col">
+            <div>
+              <label class="col form-control-sm mb-9" for="cnpjCliente">
+                Cnpj do Cliente
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="cnpjCliente"
+                  nome="cnpjCliente"
+                  placeholder="Informe o CNPJ do cliente"
+                  formControlName="cnpjCliente"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="col form-control-sm mb-9" for="endereçoCliente">
+                Endereço do Cliente
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="endereçoCliente"
+                  name="endereçoCliente"
+                  placeholder="Informe o endereço do cliente"
+                  formControlName="endereçoCliente"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col form-control-sm mx-1">
+            <div class="form-group">
+              <label class="col form-control-sm mb-9" for="telefoneCliente">
+                Telefone do Cliente
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="telefoneCliente"
+                  name="telefoneCliente"
+                  placeholder="informe o telefone do cliente"
+                  formControlName="telefoneCliente"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row col-md-4"></div>
+        <div class="form-group row mb-2">
+          <div class="offset-md-8 col-md-4">
+            <button
+              type="submit"
+              class="btn btn-outline-primary mx-1"
+              type="submit"
+            >
+              Salvar
+            </button>
+            <button
+              class="btn btn-outline-secondary mx-1"
+              type="button"
+              title="Cancelar"
+              [routerLink]="['/saida-produtos']"
+            >
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- <div class="alert alert-danger" *ngif="errorMessage">
+  {{ errorMessage }}
+</div> -->

@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="card-header">
+      <div class="d-flex justify-content-between">
+        <div>
+          <a class="nav-link disabled" href="#">Saldo em Estoque</a>
+        </div>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table mb-0">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Produto</th>
+            <th>Saldo em estoque</th>
+            <th>Vencimento mais proximo (Lote)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>
+              {{ product.id }}
+            </td>
+            <td>
+              {{ product.nome }}
+            </td>
+            <td>
+              {{ product.quantidade }}
+            </td>
+            <td>
+              {{ product.dataValidade }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

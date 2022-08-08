@@ -1,0 +1,91 @@
+<div class="card">
+  <div class="card-header">
+    <div class="d-flex justify-content-between">
+      <div>
+        <a class="nav-link disabled" href="#">Relatório Contas a Pagar</a>
+      </div>
+      <form novalidate (ngSubmit)="onSubimit()" [formGroup]="dateForm">
+        <div class="row">
+          <label class="col-md-3" for="startDate"> Gerar a partir de: </label>
+          <div class="col">
+            <input
+              class="form-control mb-2 form-control-sm"
+              type="date"
+              id="startDate"
+              nome="startDate"
+              placeholder="Informe o dataValidade do produto"
+              formControlName="startDate"
+            />
+          </div>
+
+          <label class="col-md-2" for="endDate"> Gerar até: </label>
+
+          <div class="col">
+            <input
+              class="form-control mb-2 form-control-sm"
+              type="date"
+              id="endDate"
+              nome="endDate"
+              placeholder="Informe o dataValidade do produto"
+              formControlName="endDate"
+            />
+          </div>
+          <button class="btn btn-outline-primary mx-1" type="submit">
+            Gerar relatório
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>Nº Título</th>
+          <th>Fornecedor</th>
+          <th>Endereço</th>
+          <th>CNPJ</th>
+          <th>Vencimento</th>
+          <th>Valor R$</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let financialPagar of financialPagarList.cobrancas">
+          <td>
+            {{ financialPagar.numeroPedido }}
+          </td>
+          <td>
+            {{ financialPagar.nomeDevedor }}
+          </td>
+          <td>
+            {{ financialPagar.enderecoDevedor }}
+          </td>
+          <td>
+            {{ financialPagar.cnpjDevedor }}
+          </td>
+          <td>
+            {{ financialPagar.vencimento | date: "dd/MM/yyyy" }}
+          </td>
+          <td>
+            {{ financialPagar.valor | number: "1.2" }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table>
+      <div class="col">
+        <th>Valor Total do periodo</th>
+        <tr>
+          <td>
+            {{ financialPagarList.total | number: "1.2" }}
+          </td>
+        </tr>
+      </div>
+    </table>
+    <table>
+      <tbody>
+        <tr></tr>
+      </tbody>
+    </table>
+  </div>
+</div>

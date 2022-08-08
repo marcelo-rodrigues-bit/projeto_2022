@@ -1,0 +1,45 @@
+<div class="card">
+  <div class="card-header">
+    <div class="d-flex justify-content-between">
+      <div>
+        <a class="nav-link disabled" href="#">Contas a Receber</a>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>Nº Título</th>
+          <th>Cliente</th>
+          <th>Endereço</th>
+          <th>CNPJ</th>
+          <th>Vencimento</th>
+          <th>Valor R$</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let financialReceber of financialReceberList.cobrancas">
+          <td>
+            {{ financialReceber.numeroPedido }}
+          </td>
+          <td>
+            {{ financialReceber.nomeDevedor }}
+          </td>
+          <td>
+            {{ financialReceber.enderecoDevedor }}
+          </td>
+          <td>
+            {{ financialReceber.cnpjDevedor }}
+          </td>
+          <td>
+            {{ financialReceber.vencimento | date: "dd/MM/yyyy" }}
+          </td>
+          <td>
+            {{ financialReceber.valor | number: "1.2" }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

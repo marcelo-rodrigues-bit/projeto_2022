@@ -1,0 +1,242 @@
+<div class="card">
+  <div class="card-header"></div>
+  <div class="card-body">
+    <form
+      (ngSubmit)="onSubmit()"
+      #form="ngForm"
+      class="form-group"
+      [formGroup]="entradaProdutoForm"
+    >
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <div>
+              <label class="col form-control-sm mb-9" for="nome">
+                Nome do Produto
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="nome"
+                  nome="nome"
+                  placeholder="Informe o nome do produto"
+                  formControlName="nome"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div>
+              <label class="col form-control-sm mb-9" for="descricaoProduto">
+                Descrição
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="descricaoProduto"
+                  nome="descricaoProduto"
+                  placeholder="Informe a descrição do produto"
+                  formControlName="descricaoProduto"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div>
+              <label class="col form-control-sm mb-9" for="lote"> Lote </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="lote"
+                  nome="lote"
+                  placeholder="Informe o lote do produto"
+                  formControlName="lote"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="col form-control-sm mb-9" for="quantidade">
+                Quantidade
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="quantidade"
+                  name="quantidade"
+                  placeholder="Informe a quantidade vendida"
+                  formControlName="quantidade"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div>
+              <label class="col form-control-sm mb-9" for="nomefornecedor">
+                Nome do Fornecedor
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="nomeFornecedor"
+                  nome="nomeFornecedor"
+                  placeholder="Informe o nome do Fornecedor"
+                  formControlName="nomeFornecedor"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-9">
+          <div class="col">
+            <div>
+              <label class="col form-control-sm mb-9" for="cnpjForncedor">
+                Cnpj do Cliente
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="cnpjFornecedor"
+                  nome="cnpjFornecedor"
+                  placeholder="Informe o CNPJ do fornecedor"
+                  formControlName="cnpjFornecedor"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="col form-control-sm mb-9" for="enderecoFornecedor">
+                Endereço do Fornecedor
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="enderecoFornecedor"
+                  name="enderecoFornecedor"
+                  placeholder="Informe o endereço do Fornecedor"
+                  formControlName="enderecoFornecedor"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col form-control-sm mx-1">
+            <div class="form-group">
+              <label class="col form-control-sm mb-9" for="telefoneFornecedor">
+                Telefone do Fornecedor
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="telefoneFornecedor"
+                  name="telefoneFornecedor"
+                  placeholder="informe o telefone do fornecedor"
+                  formControlName="telefoneFornecedor"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div>
+              <label class="col form-control-sm mb-9" for="unidade">
+                Unidade
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="unidade"
+                  nome="unidade"
+                  placeholder="Informe a unidade do produto"
+                  formControlName="unidade"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div>
+              <label class="col form-control-sm mb-9" for="dataValidade">
+                Data de Validade
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="date"
+                  id="dataValidade"
+                  nome="dataValidade"
+                  placeholder="Informe o dataValidade do produto"
+                  formControlName="dataValidade"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div>
+              <label class="col form-control-sm mb-9" for="dataFabricacao">
+                data de Fabricacao
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="date"
+                  id="dataFabricacao"
+                  nome="dataFabricacao"
+                  placeholder="Informe a Data de Fabricação do produto"
+                  formControlName="dataFabricacao"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div>
+              <label class="col form-control-sm mb-9" for="precoCusto">
+                Preço de Custo do Produto
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="precoCusto"
+                  nome="precoCusto"
+                  placeholder="Informe o preço de custo do produto"
+                  formControlName="precoCusto"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row col-md-4"></div>
+        <div class="form-group row mb-2">
+          <div class="offset-md-8 col-md-4">
+            <button
+              type="submit"
+              class="btn btn-outline-primary mx-1"
+              type="submit"
+            >
+              Salvar
+            </button>
+            <button
+              class="btn btn-outline-secondary mx-1"
+              type="button"
+              title="Cancelar"
+              [routerLink]="['/entrada-produtos']"
+            >
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

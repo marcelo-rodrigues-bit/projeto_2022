@@ -1,0 +1,101 @@
+<div class="card">
+  <div class="card-header">
+    <div class="d-flex justify-content-between">
+      <div>
+        <a class="nav-link disabled" href="#">Movimentações de Saída</a>
+      </div>
+      <form novalidate (ngSubmit)="onSubimit()" [formGroup]="dateForm">
+        <div class="row">
+          <label class="col-md-3" for="startDate"> Gerar a partir de: </label>
+          <div class="col">
+            <input
+              class="form-control mb-2 form-control-sm"
+              type="date"
+              id="startDate"
+              nome="startDate"
+              placeholder="Informe o dataValidade do produto"
+              formControlName="startDate"
+            />
+          </div>
+
+          <label class="col-md-2" for="endDate"> Gerar até: </label>
+
+          <div class="col">
+            <input
+              class="form-control mb-2 form-control-sm"
+              type="date"
+              id="endDate"
+              nome="endDate"
+              placeholder="Informe o dataValidade do produto"
+              formControlName="endDate"
+            />
+          </div>
+          <button class="btn btn-outline-primary mx-1" type="submit">
+            Gerar relatório
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Produto</th>
+        <th>Lote</th>
+        <th>Data de Fabricacao</th>
+        <th>Data de Validade</th>
+        <th>Vendedor</th>
+        <th>Preço de Venda</th>
+        <th>Data da Venda</th>
+        <th>Quantidade</th>
+        <th>Total</th>
+        <th>Nome do Cliente</th>
+        <th>CNPJ do Cliente</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of productsRelatorioList">
+        <td>
+          {{ product.id }}
+        </td>
+        <td>
+          {{ product.nome }}
+        </td>
+        <td>
+          {{ product.lote }}
+        </td>
+        <td>
+          {{ product.dataFabricacao | date: "dd/MM/yyyy" }}
+        </td>
+        <td>
+          {{ product.dataValidade | date: "dd/MM/yyyy" }}
+        </td>
+        <td>
+          {{ product.funcionario }}
+        </td>
+        <td>
+          {{ product.precoVenda | number: "1.2" }}
+        </td>
+        <td>
+          {{ product.dataSaida | date: "dd/MM/yyyy" }}
+        </td>
+        <td>
+          {{ product.quantidade }}
+        </td>
+        <td>
+          {{ product.total | number: "1.2" }}
+        </td>
+        <td>
+          {{ product.nomeCliente }}
+        </td>
+        <td>
+          {{ product.cnpjCliente }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

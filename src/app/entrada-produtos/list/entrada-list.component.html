@@ -1,0 +1,75 @@
+<div class="card">
+  <div class="card-header">
+    <div class="d-flex justify-content-between">
+      <div>
+        <a class="nav-link disabled" href="#">Movimentar Entrada de Produtos</a>
+      </div>
+      <div class="nav-item">
+        <button
+          type="button"
+          class="btn btn-primary"
+          [routerLink]="['/entrada-produtos/registrar']"
+        >
+          Registrar Entrada de Produtos
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>Código</th>
+          <th>Produto</th>
+          <th>Lote</th>
+          <th>Quantidade Vendida</th>
+          <th>Unidade de Medida</th>
+          <th>Preço Unitário</th>
+          <th>Total</th>
+          <th>Data da Validade</th>
+          <th>Data da Compra</th>
+          <th>Nome do Fornecedor</th>
+          <th>Cnpj do Fornecedor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let produto of entradaProdutos">
+          <td>
+            {{ produto.id }}
+          </td>
+          <td>
+            {{ produto.nome }}
+          </td>
+          <td>
+            {{ produto.lote }}
+          </td>
+          <td>
+            {{ produto.quantidade }}
+          </td>
+          <td>
+            {{ produto.unidade }}
+          </td>
+          <td>
+            {{ produto.precoCusto | number: "1.2" }}
+          </td>
+          <td>
+            {{ produto.total | number: "1.2" }}
+          </td>
+          <td>
+            {{ produto.dataValidade | date: "dd/MM/yyyy" }}
+          </td>
+          <td>
+            {{ produto.dataEntrada | date: "dd/MM/yyyy" }}
+          </td>
+          <td>
+            {{ produto.nomeFornecedor }}
+          </td>
+          <td>
+            {{ produto.cnpjFornecedor }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

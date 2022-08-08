@@ -1,0 +1,96 @@
+<div class="card">
+
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+    <div class="card-body">
+
+        <form novalidate (ngSubmit)=toSave() [formGroup]="productForm">
+            <div class='row'>
+                <div class="col">
+                    <label class="col form-control-sm mb-9" for="nome">
+                        Descrição Produto
+                    </label>
+                    <div class="col">
+                        <input class="form-control mb-2 form-control-sm" type="text" id="nome" name="nome"
+                            placeholder="Informe o nome do produto" formControlName="nome">
+                    </div>
+                </div>
+
+                <div class="col">
+                    <label class="col form-control-sm mb-9" for="descricao">
+                        Descrição Detalhada
+                    </label>
+                    <div class="col">
+                        <input class="form-control mb-2 form-control-sm" type="text" id="descricao" name="descricao"
+                            placeholder="Informe uma descrição detalhada do produto" formControlName="descricao">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-9">
+                <div class="col form-control-sm mx-2">
+                    <label for="unidadeVolume ">Unidade de Medida : </label>
+                    <div>
+                        <select class="selectpicker " data-size="4" data-live-search="true" data-width="100%"
+                            name="unidadeVolume" required>
+                            <option selected default>UN</option>
+                            <option>CX</option>
+                            <option>PT</option>
+                            <option>MT</option>
+                            <option>LT</option>
+                            <option>PC</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col form-control-sm mx-2">
+                    <label for="ativo">Ativo : </label>
+                    <div>
+                        <select class="selectpicker " data-size="4" data-live-search="true" data-width="100%"
+                            name="unidadeVolume" required>
+                            <option selected default>SIM</option>
+                            <option>NÃO</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class='row col-md-4'>
+                <div class="col form-control-sm mx-1">
+                    <label class="col form-control-sm mb-9" for="precoCusto">
+                        Preço de Custo
+                    </label>
+                    <div class="col">
+                        <input class="form-control mb-2" type="text" id="precoCusto" name="precoCusto"
+                            placeholder="R$ 0,00" formControlName="precoCusto">
+                    </div>
+                </div>
+
+                <div class="col form-control-sm mx-1">
+                  <label class="col form-control-sm mb-9" for="margemLucro">
+                      Margem de Lucro
+                  </label>
+                  <div class="col">
+                      <input class="form-control mb-2" type="text" id="margemLucro" name="margemLucro"
+                          placeholder="%" formControlName="margemLucro">
+                  </div>
+                </div>
+              </div>
+            <div>
+
+          </div>
+
+            <div class="form-group row mb-2">
+                <div class="offset-md-8 col-md-4">
+                    <button class="btn btn-outline-primary mx-1" type="submit">
+                        Salvar
+                    </button>
+                    <button class="btn btn-outline-secondary mx-1" type="button" title="Cancelar"
+                        [routerLink]="['/product-registration']">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

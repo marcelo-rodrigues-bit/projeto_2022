@@ -1,0 +1,107 @@
+<div class="card">
+  <div class="card-header"></div>
+  <div class="card-body">
+    <form
+      (ngSubmit)="onSubmit()"
+      #form="ngForm"
+      class="form-group"
+      [formGroup]="vendorForm"
+    >
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <div>
+              <label class="col form-control-sm mb-9" for="nome">
+                Nome do Fornecedor
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="nome"
+                  nome="nome"
+                  placeholder="Informe o nome do produto"
+                  formControlName="nome"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label class="col form-control-sm mb-9" for="descricao">
+                CNPJ
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="cnpj"
+                  name="cnpj"
+                  placeholder="Informe o CNPJ do fornecedor"
+                  formControlName="cnpj"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-9">
+          <div class="col">
+            <div class="form-group">
+              <label class="col form-control-sm mb-9" for="descricao">
+                Endereço
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="endereco"
+                  name="endereco"
+                  placeholder="Informe o endereço do fornecedor"
+                  formControlName="endereco"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-9">
+          <div class="col">
+            <div class="form-group">
+              <label class="col form-control-sm mb-9" for="descricao">
+                Telefone
+              </label>
+              <div class="col">
+                <input
+                  class="form-control mb-2 form-control-sm"
+                  type="text"
+                  id="telefone"
+                  name="telefone"
+                  placeholder="Informe o telefone do fornecedor"
+                  formControlName="telefone"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row mb-2">
+          <div class="offset-md-8 col-md-4">
+            <button
+              type="submit"
+              class="btn btn-outline-primary mx-1"
+              type="submit"
+            >
+              Salvar
+            </button>
+            <button
+              class="btn btn-outline-secondary mx-1"
+              type="button"
+              title="Cancelar"
+              [routerLink]="['/vendors']"
+            >
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

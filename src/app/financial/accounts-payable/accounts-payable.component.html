@@ -1,0 +1,45 @@
+<div class="card">
+  <div class="card-header">
+    <div class="d-flex justify-content-between">
+      <div>
+        <a class="nav-link disabled" href="#">Contas a Pagar</a>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>Nº Título</th>
+          <th>Fornecedor</th>
+          <th>Endereço</th>
+          <th>CNPJ</th>
+          <th>Vencimento</th>
+          <th>Valor R$</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let financialPagar of financialPagarList.cobrancas">
+          <td>
+            {{ financialPagar.numeroPedido }}
+          </td>
+          <td>
+            {{ financialPagar.nomeFornecedor }}
+          </td>
+          <td>
+            {{ financialPagar.enderecoFornecedor }}
+          </td>
+          <td>
+            {{ financialPagar.cnpjFornecedor }}
+          </td>
+          <td>
+            {{ financialPagar.vencimento | date: "dd/MM/yyyy" }}
+          </td>
+          <td>
+            {{ financialPagar.valor | number: "1.2" }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
